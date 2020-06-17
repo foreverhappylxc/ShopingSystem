@@ -27,13 +27,13 @@ public class IndexController {
     private ConnectMysql connectMysql;
     
     @RequestMapping("index.lxc")
-    public ModelAndView getTest(HttpServletRequest request) {
+    public ModelAndView index(HttpServletRequest request) {
         connectMysql.setConnection();
         Connection connection = connectMysql.getConnection();
         if (connection != null) {
             System.out.println("连接成功！");
         }
-        return new ModelAndView("HelloWorld");
+        return new ModelAndView("index");
     }
     
 }
