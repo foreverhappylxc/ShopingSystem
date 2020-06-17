@@ -11,4 +11,4 @@
 ### 关系分析
 user填写order，购买commodity。一个user拥有一个shopping_cart，一个shopping_cart用来存放物品
 ### ER图如下
-![er图](er_1.0.png)
+![er图](er_1.1.png)
