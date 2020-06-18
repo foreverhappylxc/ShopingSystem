@@ -28,6 +28,7 @@ public class LoginController {
     
     @RequestMapping("login")
     public ModelAndView login(HttpServletRequest request) {
+        // TODO 
         connectMysql.setConnection();
         Connection connection = connectMysql.getConnection();
         if (connection != null) {
