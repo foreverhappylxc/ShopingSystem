@@ -27,7 +27,7 @@ public class LoginIntercepter implements HandlerInterceptor {
             if (object != null) {
                 return true;
             } else {
-                request.getRequestDispatcher("view/login.jsp").forward(request, response);
+                response.sendRedirect("loginIntercepter");
                 System.out.println(object);
                 return false;
             }

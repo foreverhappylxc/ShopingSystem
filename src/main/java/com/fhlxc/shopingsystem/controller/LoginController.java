@@ -20,20 +20,25 @@ import com.fhlxc.shopingsystem.sql.ConnectMysql;
 */
 
 @Controller
-public class IndexController {
+public class LoginController {
     
     @Autowired
     @Qualifier("ConnectMysql")
     private ConnectMysql connectMysql;
     
-    @RequestMapping("index.lxc")
-    public ModelAndView index(HttpServletRequest request) {
+    @RequestMapping("login")
+    public ModelAndView login(HttpServletRequest request) {
         connectMysql.setConnection();
         Connection connection = connectMysql.getConnection();
         if (connection != null) {
             System.out.println("连接成功！");
         }
-        return new ModelAndView("index");
+        return new ModelAndView("view/index.jsp");
+    }
+    
+    @RequestMapping("loginIntercepter")
+    public ModelAndView loginIntercepter(HttpServletRequest request) {
+        return new ModelAndView("view/login.jsp");
     }
     
 }

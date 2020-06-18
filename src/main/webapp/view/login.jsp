@@ -5,11 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>登录页面</title>
-<link rel="stylesheet" href="Style.css">
+<link rel="stylesheet" href="css/Style.css">
 </head>
 <body>
     <h1>用户登录</h1>
-    <form method="post" action="view/index.jsp" style="margin-left:510px;">
+    <form method="post" action="login" style="margin-left:510px;">
         <table>
             <tr>
                 <td>账号：</td>

@@ -1,0 +1,29 @@
+@charset "UTF-8";
+    
+	body{
+		background-image:url(01.jpg);
+		background-size:cover;
+		background-repeat:no-repeat;
+		background-position:center;
+		height:450px;
+	}
+	h1{
+		color: magenta;
+	    position: relative;
+	    text-align:center;
+	    font-family: 'Times New Roman', Times, serif;
+	    font-size: 40px;
+	    font-weight: bold;
+	}
+	form{
+	    margin-left:400px;
+        margin-top:75px;
+        width:40%;
+	    color: lemonchiffon;
+	    border-style: dotted;
+	    text-align: center;
+	    padding: 15px;
+	    border-width: 10px 10px 10px 10px;
+	    font-size: 40px;
+	    line-height: 100%;
+}
