@@ -1,0 +1,71 @@
+@charset "UTF-8";
+.personal_table {
+	width: 40%;
+	margin: auto;
+}
+
+.personal_button {
+	float: right;
+	width: 23px;
+	height: 23px;
+    border-color: yellow;
+	border-radius: 10px;
+    background-image: url("../resources/modify.png");
+    background-size: 100% 100%;
+    background-color: transparent;
+}
+
+.personal_button:hover, #button_add:hover, #button_remove:hover {
+	background-color: yellow;
+}
+
+.personal_button:pressed, #button_add:pressed, #button_remove:pressed {
+    background-color: transparent;
+}
+
+button {
+	outline: none;
+}
+
+button::-moz-focus-inner, input[type="reset"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="file"] > input[type="button"]::-moz-focus-inner {
+    border: none; 
+}
+
+td {
+	width: 50%;
+}
+
+img {
+	height: 200px;
+	display: block;
+	margin: auto;
+}
+
+.personal_module {
+	background-color: #ffd700;
+	font: 30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 500px;
+	margin-right: 500px;
+	border-radius: 10px;
+}
+
+#button_add {
+	width: 100px;
+	border-radius: 10px;
+	margin-top: 30px;
+	background-color: transparent;
+}
+
+#button_remove {
+	float: right;
+    width: 23px;
+    height: 23px;
+    border-color: yellow;
+    border-radius: 10px;
+    background-image: url("../resources/delete.png");
+    background-size: 100% 100%;
+    background-color: transparent;
+    margin-right: 200px;
+}

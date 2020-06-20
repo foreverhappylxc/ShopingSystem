@@ -1,4 +1,7 @@
 $(document).ready(function(){
+	$("#index").click(function() {
+		$(window).attr('location','/ShopingSystem/index');
+	});
 	$("#personal").click(function() {
 		/*$.ajax({
             type: 'POST',

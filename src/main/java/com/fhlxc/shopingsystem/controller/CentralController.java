@@ -3,6 +3,7 @@ package com.fhlxc.shopingsystem.controller;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -17,9 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class CentralController {
 
     @RequestMapping("personal") 
-    public ModelAndView central(HttpServletRequest request) {
-        // TODO
-        System.out.println("被调用");
+    public ModelAndView central(HttpServletRequest request, Model model) {
         return new ModelAndView("personal");
     }
     
