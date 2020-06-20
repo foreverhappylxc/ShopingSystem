@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath(); 
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,16 +13,31 @@
 </head>
 <body>
     <h1>用户登录</h1>
-    <form method="post" action="login" style="margin-left:510px;">
+    <form method="post" action="<%= basePath %>handle_login" style="margin-left:510px;">
         <table>
             <tr>
                 <td>账号：</td>
-                <td><input type="text" name="name" id="name" size="45"></td>
+                <td><input type="text" name="id" id="id" size="45"></td>
             </tr>
             <tr>
                 <td>密码：</td>
                 <td><input type="password" name="pwd" id="pwd" size="45"></td>
             </tr>
+            <%
+            String error = request.getParameter("error");
+            if (error != null) {
+                if (!error.equals("")) {
+            %>
+            <tr align="center">
+                <td colspan="2" align="center" style="font-size: 14px;color: red;">
+                    <%= error %>
+                </td>       
+            </tr>
+            <%
+                    error = "";
+                }
+            }
+            %>
             <tr>
                 <td></td>
                 <td>

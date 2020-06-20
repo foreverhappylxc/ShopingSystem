@@ -23,7 +23,7 @@ public class ConnectMysql {
     @Qualifier("MysqlProperties")
     private MysqlProperties properties;
     
-    public void setConnection() {
+    private void setConnection() {
         try {
             Class.forName(properties.driver);
             conn = DriverManager.getConnection(properties.url, properties.name, properties.password);
@@ -34,7 +34,8 @@ public class ConnectMysql {
         }
     }
     
-    public Connection getConnection() {
+    public Connection setAndGetConnection() {
+        setConnection();
         return conn;
     }
 

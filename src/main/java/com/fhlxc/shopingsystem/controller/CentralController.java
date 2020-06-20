@@ -16,29 +16,29 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class CentralController {
 
-    @RequestMapping("central") 
+    @RequestMapping("personal") 
     public ModelAndView central(HttpServletRequest request) {
         // TODO
         System.out.println("被调用");
-        return new ModelAndView("view/login.jsp");
+        return new ModelAndView("personal");
     }
     
     @RequestMapping("orderFinish") 
     public ModelAndView orderFinish(HttpServletRequest request) {
         // TODO
-        return new ModelAndView("wode");
+        return new ModelAndView("order_finish");
     }
     
     @RequestMapping("orderUnfinish") 
     public ModelAndView orderUnfinish(HttpServletRequest request) {
         // TODO
-        return new ModelAndView("wode");
+        return new ModelAndView("order_unfinish");
     }
     
     @RequestMapping("shopingCart") 
     public ModelAndView shopingCart(HttpServletRequest request) {
         // TODO
-        return new ModelAndView("wode");
+        return new ModelAndView("shoping_cart");
     }
     
 }

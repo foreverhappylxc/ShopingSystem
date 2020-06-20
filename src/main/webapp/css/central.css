@@ -1,8 +1,8 @@
 @charset "UTF-8";
 .central_background {
 	position: fixed;
-	width: 12%;
-	height: 24%;
+	width: 110px;
+	height: 220px;
 	top: 30px;
 	right: 50px;
 	z-index: 900;
@@ -15,7 +15,7 @@
 .img {
 	height: 15%;
 	width: 100%;
-	margin: 0px 0px 20% 0px;
+	margin: 0px 0px 15px 0px;
 }
 
 .u_img {
@@ -29,8 +29,8 @@
 .central_item {
 	display: flex;
 	width: 100%;
-	height: 15%;
-	margin: 2% 0px 2% 0px;
+	height: 40px;
+	margin: 0px 0px 0px 0px;
 	align-items: center;
 	justify-content: center;
 	border-radius: 20px;

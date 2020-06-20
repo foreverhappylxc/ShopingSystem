@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$("#central").click(function() {
+	$("#personal").click(function() {
 		/*$.ajax({
             type: 'POST',
             url: "central",
@@ -14,6 +14,15 @@ $(document).ready(function(){
                 alert(errorThrown);
             }
         });*/
-		$(window).attr('location','central');
+		$(window).attr('location','/ShopingSystem/personal');
+	});
+	$("#order_finish").click(function() {
+		$(window).attr('location','/ShopingSystem/orderFinish');
+	});
+	$("#order_unfinish").click(function() {
+		$(window).attr('location','/ShopingSystem/orderUnfinish');
+	});
+	$("#shoping_cart").click(function() {
+		$(window).attr('location','/ShopingSystem/shopingCart');
 	});
 });
