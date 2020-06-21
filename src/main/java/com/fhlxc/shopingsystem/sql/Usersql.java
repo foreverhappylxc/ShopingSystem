@@ -1,6 +1,7 @@
 package com.fhlxc.shopingsystem.sql;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -18,8 +19,8 @@ import com.fhlxc.shopingsystem.model.User;
 * @description
 */
 
-@Service("SearchUser")
-public class SearchUser extends SqlOperationAdapter {
+@Service("UserSql")
+public class Usersql extends SqlOperationAdapter {
     
     @Autowired
     @Qualifier("ConnectMysql")
@@ -48,6 +49,25 @@ public class SearchUser extends SqlOperationAdapter {
             e.printStackTrace();
         }
         return null;
+    }
+    
+    @Override
+    public boolean insert(Object... args) {
+        try (Connection connection = connectMysql.setAndGetConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement((String) args[0]);
+            User user = (User) args[1];
+            preparedStatement.setString(1, user.getU_address());
+            preparedStatement.setString(2, user.getU_img());
+            preparedStatement.setString(3, user.getU_mail());
+            preparedStatement.setString(4, user.getU_name());
+            preparedStatement.setString(5, user.getU_pwd());
+            preparedStatement.setString(6, user.getU_id());
+            preparedStatement.execute();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+        return false;
     }
     
 }

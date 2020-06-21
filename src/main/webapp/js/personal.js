@@ -42,6 +42,12 @@ $(document).ready(function(){
 			$("#info_pwd").attr("contenteditable", "true");
 			$(this).css("background-image", "url('/ShopingSystem/resources/save.png')");
 		} else {
+			var search_str = /^[\w\-\.]+@[\w\-\.]+(\.\w+)+$/;
+			if (!search_str.test($("#info_mail").text())) {
+				alert("邮箱格式错误！");
+			    $('#info_mail').focus();
+			    return;
+			}
 			var address = "";
 			$(".address").each(function() {
 				address = address + ";" + $(this).text().trim();
@@ -120,10 +126,18 @@ $(document).ready(function(){
 	$("#button_add").click(function() {
 		if ($(this).text() == "添加") {
 			$(this).parent().parent().before("<tr class='personal_tr'><td><div class='address' contenteditable='true'></div></td><td><button class='button_remove' id='button_remove'></button></td></tr>");
+			$(this).parent().parent().prev().find(".address").focus();
 			$("#personal_button3").attr('disabled',true);
 			$("#button_cancel").attr('disabled',false);
 			$(this).text("保存");
 		} else {
+			if ($(this).parent().parent().prev().find(".address").text().trim() == "") {
+				$(this).parent().parent().prev().remove();
+				$("#personal_button3").attr('disabled',false);
+				$("#button_cancel").attr('disabled',true);
+				$(this).text("添加");
+				return;
+			}
 			var address = "";
 			$(".address").each(function() {
 				address = address + ";" + $(this).text().trim();

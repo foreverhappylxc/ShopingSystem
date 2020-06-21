@@ -21,7 +21,7 @@ public class LoginIntercepter implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws ServletException, IOException {
         String requestURI = request.getRequestURI();
-        if (requestURI.indexOf("login") <= 0) {
+        if (requestURI.indexOf("login") <= 0 && requestURI.indexOf("register") <= 0) {
             HttpSession session = request.getSession();
             Object object = session.getAttribute("user");
             if (object != null) {

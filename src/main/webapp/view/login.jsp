@@ -49,7 +49,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <table>
             <tr> 
                 <td>
-                    <a href="register.jsp">没有开通？转往注册页面</a>
+                    <a href="register">没有开通？转往注册页面</a>
                 </td>
             </tr>
         </table>

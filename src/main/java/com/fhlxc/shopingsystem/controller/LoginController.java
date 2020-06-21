@@ -1,5 +1,7 @@
 package com.fhlxc.shopingsystem.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -13,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.fhlxc.shopingsystem.model.User;
+import com.fhlxc.shopingsystem.sql.CommoditySql;
 import com.fhlxc.shopingsystem.sql.SqlOperation;
 
 /**
@@ -27,8 +30,11 @@ import com.fhlxc.shopingsystem.sql.SqlOperation;
 public class LoginController {
 
     @Autowired
-    @Qualifier("SearchUser")
+    @Qualifier("UserSql")
     SqlOperation sqlOperation;
+    @Autowired
+    @Qualifier("CommoditySql")
+    private CommoditySql commoditySql;
     
     @RequestMapping("handle_login")
     public ModelAndView login(HttpServletRequest request, HttpServletResponse response, Model model
@@ -40,7 +46,9 @@ public class LoginController {
         }
         if (pwd.equals(user.getU_pwd())) {
             model.addAttribute("user", user);
-            return new ModelAndView("redirect:index");
+            List<Object> list = commoditySql.searchMore("select * from commodity where concat_ws(';','c_address',"
+                    + "'c_description','c_id','c_name','c_price') like '%" + "%'");
+            return new ModelAndView("index", "list", list);
         } else {
             attributes.addAttribute("error", "账户名或者密码错误！");
             return new ModelAndView("redirect:login");
@@ -55,6 +63,11 @@ public class LoginController {
     @RequestMapping("index")
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
         return new ModelAndView("index");
+    }
+    
+    @RequestMapping("register")
+    public ModelAndView register(HttpServletRequest request, HttpServletResponse response) {
+        return new ModelAndView("register");
     }
     
 }

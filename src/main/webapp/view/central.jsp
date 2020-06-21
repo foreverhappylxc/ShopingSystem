@@ -12,7 +12,6 @@
     </div>
     <div class="central_item" id="index">网站首页</div>
     <div class="central_item" id="personal">个人中心</div>
-    <div class="central_item" id="order_unfinish">未完成订单</div>
-    <div class="central_item" id="order_finish">已完成订单</div>
+    <div class="central_item" id="order_finish">我的订单</div>
     <div class="central_item" id="shoping_cart">我的购物车</div>
 </div>

@@ -1,0 +1,36 @@
+@charset "UTF-8";
+table {
+	width: 50%;
+	border-color: #c4a000;
+	border-radius: 20px;
+	border-style: dashed;
+	margin: auto;
+	margin-top: 15px;
+}
+
+td {
+	width: 50%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+button {
+    outline: none;
+    width: 100px;
+    border-radius: 10px;
+    margin-left: 60%;
+    margin-top: 15px;
+    background-color: transparent;
+}
+
+button::-moz-focus-inner, input[type="reset"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="file"] > input[type="button"]::-moz-focus-inner {
+    border: none; 
+}
+
+button:hover {
+	background-color: yellow;
+}
+
+button:pressed {
+	background-color: transparent;
+}

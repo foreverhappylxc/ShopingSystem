@@ -14,7 +14,16 @@ public class Commodity {
     private float c_price;
     private String c_address;
     private String c_description;
+    private String c_img;
     
+    public String getC_img() {
+        return c_img;
+    }
+
+    public void setC_img(String c_img) {
+        this.c_img = c_img;
+    }
+
     public String getC_id() {
         return c_id;
     }
@@ -35,7 +44,7 @@ public class Commodity {
         return c_price;
     }
 
-    public void setC_price(Float c_price) {
+    public void setC_price(float c_price) {
         this.c_price = c_price;
     }
 
