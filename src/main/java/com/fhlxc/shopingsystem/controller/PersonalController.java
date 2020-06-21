@@ -55,7 +55,7 @@ public class PersonalController {
         fos.flush();
         fos.close();
         request.getSession().setAttribute("user", user);
-        personalSql.modify("update user set u_address=?, u_img=?, u_mail=?, u_name=?, u_pwd=? where u_id=" + user.getU_id(), user);
+        personalSql.modify("update user set u_address=?, u_img=?, u_mail=?, u_name=?, u_pwd=? where u_id='" + user.getU_id() + "'", user);
         return "user_img/" + name;
     }
     
@@ -63,7 +63,7 @@ public class PersonalController {
     @ResponseBody
     public void infoModify(HttpServletRequest request, @RequestBody User user) {
         request.getSession().setAttribute("user", user);
-        personalSql.modify("update user set u_address=?, u_img=?, u_mail=?, u_name=?, u_pwd=? where u_id=" + user.getU_id(), user);
+        personalSql.modify("update user set u_address=?, u_img=?, u_mail=?, u_name=?, u_pwd=? where u_id='" + user.getU_id() + "'", user);
         //System.out.println(user.getU_name());
     }
     

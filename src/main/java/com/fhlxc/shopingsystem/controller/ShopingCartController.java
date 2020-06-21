@@ -56,7 +56,7 @@ public class ShopingCartController {
     @RequestMapping("searchCart")
     public ModelAndView searchCart(HttpServletRequest request, HttpServletResponse response) {
         User user = (User) request.getSession().getAttribute("user");
-        List<Object> list = shopingCartSql.searchMore("select * from shoping_cart where u_id=" + user.getU_id());
+        List<Object> list = shopingCartSql.searchMore("select * from shoping_cart where u_id='" + user.getU_id() + "'");
         return new ModelAndView("shoping_cart", "list", list);
     }
     

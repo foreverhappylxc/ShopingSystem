@@ -39,7 +39,7 @@ public class LoginController {
     @RequestMapping("handle_login")
     public ModelAndView login(HttpServletRequest request, HttpServletResponse response, Model model
             , String id, String pwd, RedirectAttributes attributes) {
-        User user = (User)sqlOperation.searchOne("select * from user where u_id=" + id);
+        User user = (User)sqlOperation.searchOne("select * from user where u_id='" + id + "'");
         if (user == null) {
             attributes.addAttribute("error", "账户名或者密码错误！");
             return new ModelAndView("redirect:login");

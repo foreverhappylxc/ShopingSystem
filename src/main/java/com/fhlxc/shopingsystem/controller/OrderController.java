@@ -52,7 +52,7 @@ public class OrderController {
     @ResponseBody
     public ModelAndView searchOrder(HttpServletRequest request, HttpServletResponse response) {
         User user = (User) request.getSession().getAttribute("user");
-        List<Object> list = orderSql.searchMore("select * from `order` where u_id=" + user.getU_id());
+        List<Object> list = orderSql.searchMore("select * from `order` where u_id='" + user.getU_id() + "'");
         return new ModelAndView("order_finish", "list", list);
     }
     
