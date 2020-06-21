@@ -24,6 +24,41 @@
         <property name="prefix" value="view/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+    <!--配置MultipartResolver:用于处理表单中的file-->
+    <!-- 文件上传配置，这里id的名称固定写法 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"></property>      <!--请求的编码格式-->
+        <property name="maxUploadSize" value="102400000"></property>    <!--文件最大大小(字节) 1024*1024*50=50M-->
+        <property name="resolveLazily" value="true"/>           <!--resolveLazily属性启用是为了推迟文件解析，以便捕获文件大小异常-->
+        <property name="uploadTempDir" value="resources"></property>       <!--指定上传文件的临时文件夹，请在项目中创建好目录。-->
+    </bean>
+    
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
+    <!--通过处理器适配器AnnotationMethodHandlerAdapter来开启支持@RequestMapping注解-->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <!-- 设置返回字符串编码 -->
+                <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                    <property name = "supportedMediaTypes">
+                        <list>
+                            <value>text/html;charset=UTF-8</value>
+                            <value>application/json;charset=UTF-8</value>
+                        </list>
+                    </property>
+                </bean>
+                <!-- json转换器 -->
+                <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                    <property name="supportedMediaTypes">
+                        <list>
+                            <value>text/html;charset=UTF-8</value>
+                            <value>application/json;charset=UTF-8</value>
+                        </list>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
     
     <mvc:interceptors>
         <mvc:interceptor>

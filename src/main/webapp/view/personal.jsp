@@ -14,11 +14,12 @@
 </head>
 <body>
     <jsp:include page="central.jsp"></jsp:include>
+    <input type="file" style="display: none;" id="pictureUpload" accept="image/jpg, image/png, image/jpeg">
     <div class="personal_module">
         &nbsp;&nbsp;&nbsp;&nbsp;头像
         <button class="personal_button" id="personal_button1"></button>
     </div>
-    <img alt="头像" src="${ user.u_img }">
+    <img alt="头像" src="${ user.u_img }" id="info_img">
     <div class="personal_module" id="personal_info">
         &nbsp;&nbsp;&nbsp;&nbsp;基本信息
         <button class="personal_button" id="personal_button2"></button>
@@ -26,36 +27,41 @@
     <table class="personal_table">
         <tr class="personal_tr">
             <td>用户ID</td>
-            <td>${ user.u_id }</td>
+            <td id="info_id">${ user.u_id }</td>
         </tr>
         <tr class="personal_tr">
             <td>用户名</td>
-            <td>${ user.u_name }</td>
+            <td id="info_name">${ user.u_name }</td>
         </tr>
         <tr class="personal_tr">
             <td>用户邮箱</td>
-            <td>${ user.u_mail }</td>
+            <td id="info_mail">${ user.u_mail }</td>
         </tr>
         <tr class="personal_tr">
             <td>用户密码</td>
-            <td>*******</td>
+            <td id="info_pwd">${ user.u_pwd }</td>
         </tr>
     </table>
-    <div class="personal_module" id="personal_addr">
+    <div class="personal_module" id="info_address">
         &nbsp;&nbsp;&nbsp;&nbsp;地址信息
         <button class="personal_button" id="personal_button3"></button>
     </div>
-    <table class="personal_table">
+    <table class="personal_table" id="table">
         <%
         String[] strings = ((User) request.getSession().getAttribute("user")).getU_address().split(";");
         for (String s: strings) {
+            if (s.equals("")) {
+                continue;
+            }
         %>
         <tr class="personal_tr">
             <td>
-                <div>
+                <div class="address">
                     <%= s %>
-                    <button id="button_remove"></button>
                 </div>
+            </td>
+            <td>
+                <button class="button_remove" id="button_remove"></button>
             </td>
         </tr>
         <%
@@ -64,6 +70,9 @@
         <tr>
             <td>
                 <button id="button_add">添加</button>
+            </td>
+            <td>
+                <button id="button_cancel" disabled="disabled">取消</button>
             </td>
         </tr>
     </table>

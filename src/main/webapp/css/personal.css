@@ -15,7 +15,7 @@
     background-color: transparent;
 }
 
-.personal_button:hover, #button_add:hover, #button_remove:hover {
+.personal_button:hover, #button_add:hover, #button_remove:hover, #button_cancel:hover {
 	background-color: yellow;
 }
 
@@ -51,15 +51,14 @@ img {
 	border-radius: 10px;
 }
 
-#button_add {
+#button_add, #button_cancel {
 	width: 100px;
 	border-radius: 10px;
-	margin-top: 30px;
+	margin-top: 15px;
 	background-color: transparent;
 }
 
 #button_remove {
-	float: right;
     width: 23px;
     height: 23px;
     border-color: yellow;
