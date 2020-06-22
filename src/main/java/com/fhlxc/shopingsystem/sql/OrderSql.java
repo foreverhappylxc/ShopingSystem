@@ -47,7 +47,7 @@ public class OrderSql extends SqlOperationAdapter {
                 order.setO_price(resultSet.getFloat("o_price"));
                 String[] strings = resultSet.getString("o_receiving_address").split(";");
                 String s = "";
-                if (strings.length < 1) {
+                if (strings.length < 2) {
                     s = strings[0];
                 } else {
                     s = strings[1];

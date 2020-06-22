@@ -43,7 +43,7 @@ public class OrderController {
         if (success) {
             map.put("msg", "添加成功");
         } else {
-            map.put("msg", "添加失败");
+            map.put("msg", "添加失败，可能商品已经添加或者已移除");
         }
         return map;
     }

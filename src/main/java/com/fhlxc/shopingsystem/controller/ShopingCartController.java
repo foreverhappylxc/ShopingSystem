@@ -47,7 +47,7 @@ public class ShopingCartController {
         if (success) {
             msg = "添加成功";
         } else {
-            msg = "添加失败，可能商品已经移除";
+            msg = "添加失败，可能商品已经移除或者已经添加";
         }
         map.put("msg", msg);
         return map;
