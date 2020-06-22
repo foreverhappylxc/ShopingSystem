@@ -71,6 +71,7 @@
                      <input type="hidden" value=" ${ user.u_address }">
                      <input type="hidden" value="<%= commodity.getC_address() %>">
                      <input type="hidden" value="${ user.u_id }">
+                     <input type="hidden" value="<%= commodity.getC_id() %>">
                      <button class="btn btn-default add" id="add">
                         加入购物车
                      </button>

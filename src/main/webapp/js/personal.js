@@ -40,6 +40,7 @@ $(document).ready(function(){
 			$("#info_name").attr("contenteditable", "true");
 			$("#info_mail").attr("contenteditable", "true");
 			$("#info_pwd").attr("contenteditable", "true");
+			$("#info_name").focus();
 			$(this).css("background-image", "url('/ShopingSystem/resources/save.png')");
 		} else {
 			var search_str = /^[\w\-\.]+@[\w\-\.]+(\.\w+)+$/;
@@ -86,6 +87,7 @@ $(document).ready(function(){
 	$("#personal_button3").click(function() {
 		if ($(this).css("background-image").indexOf("modify") >= 0) {
 			$(".address").attr("contenteditable", "true");
+			$(".address").focus();
 			$("#button_add").attr('disabled',true);
 			$(this).css("background-image", "url('/ShopingSystem/resources/save.png')");
 		} else {
