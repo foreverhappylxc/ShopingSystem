@@ -8,7 +8,7 @@
   <name>ShopingSystem Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <properties>
-    <spring.version>5.2.7.RELEASE</spring.version>
+    <spring.version>5.2.22.RELEASE</spring.version>
     <commons-logging.version>1.2</commons-logging.version>
     <servlet.version>4.0.1</servlet.version>
     <jsp-api.version>2.3.3</jsp-api.version>
